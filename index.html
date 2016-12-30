@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>天狗书店</title>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="bookmark" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="js/bootstrap/dist/css/bootstrap.min.css" />
+		<style type="text/css">
+			.cover {
+				height: 40px;
+				width: auto;
+			}
+			
+			.addBook {
+				padding-top: 10px;
+			}
+			
+			.w100 {
+				width: 50px
+			}
+			
+			.w200 {
+				width: 200px;
+			}
+			
+			.w300 {
+				width: 300px
+			}
+		</style>
+	</head>
+
+	<body ng-app="bookApp">
+
+		<div class="container" ng-controller="BookController">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+							<a class="navbar-brand" href="#">天狗书店</a>
+						</div>
+
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active">
+									<a href="#">前端</a>
+								</li>
+								<li>
+									<a href="#">Java</a>
+								</li>
+								<li>
+									<a href="#">.Net</a>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">更多类型<strong class="caret"></strong></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">Action</a>
+										</li>
+										<li>
+											<a href="#">Another action</a>
+										</li>
+										<li>
+											<a href="#">Something else here</a>
+										</li>
+										<li class="divider">
+										</li>
+										<li>
+											<a href="#">Separated link</a>
+										</li>
+										<li class="divider">
+										</li>
+										<li>
+											<a href="#">One more separated link</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<form class="navbar-form navbar-left" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control" />
+								</div> <button type="submit" class="btn btn-default">搜索</button>
+							</form>
+						</div>
+					</nav>
+					<div class="row clearfix">
+						<div class="col-md-12 column">
+							<div class="carousel slide" id="carousel-519027">
+								<ol class="carousel-indicators">
+									<li class="active" data-slide-to="0" data-target="#carousel-519027">
+									</li>
+									<li data-slide-to="1" data-target="#carousel-519027">
+									</li>
+									<li data-slide-to="2" data-target="#carousel-519027">
+									</li>
+								</ol>
+								<div class="carousel-inner">
+									<div class="item active">
+										<img alt="" src="img/adv3.jpg" />
+										<div class="carousel-caption">
+
+										</div>
+									</div>
+									<div class="item">
+										<img alt="" src="img/adv2.jpg" />
+										<div class="carousel-caption">
+										</div>
+									</div>
+									<div class="item">
+										<img alt="" src="img/adv1.jpg" />
+										<div class="carousel-caption">
+											<h4>
+										Third Thumbnail label
+									</h4>
+											<p>
+												Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+											</p>
+										</div>
+									</div>
+								</div>
+								<a class="left carousel-control" href="#carousel-519027" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+								<a class="right carousel-control" href="#carousel-519027" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div class="addBook">
+						<a id="modal-234446" href="#modal-container-234446" role="button" class="btn btn-sm btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> 新书上架</a>
+
+						<div class="modal fade" id="modal-container-234446" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+								添加/编辑图书
+							</h4>
+									</div>
+									<div class="modal-body">
+
+										<form class="form-horizontal" role="form">
+											<div class="form-group">
+												<label for="id" class="col-sm-2 control-label">编号</label>
+												<div class="col-sm-10">
+													<input type="text" class="form-control w100" id="id" ng-model="book.id" ng-readonly="true" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label for="title" class="col-sm-2 control-label">书名</label>
+												<div class="col-sm-10">
+													<input type="text" class="form-control w300" id="title" ng-model="book.title" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label for="picture" class="col-sm-2 control-label">图片</label>
+												<div class="col-sm-10">
+													<input type="text" class="form-control w200" id="picture" ng-model="book.picture" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label for="price" class="col-sm-2 control-label">价格</label>
+												<div class="col-sm-10">
+													<input type="text" class="form-control w200" id="price" ng-model="book.price" />
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label for="author" class="col-sm-2 control-label">作者</label>
+												<div class="col-sm-10">
+													<input type="text" class="form-control w200" id="author" ng-model="book.author" />
+												</div>
+											</div>
+
+										</form>
+
+									</div>
+									<div class="modal-footer">
+										<button type="button" ng-click="save()" class="btn btn-primary">
+										<span class="glyphicon glyphicon-floppy-disk"></span> 
+										    保存</button>
+										<button type="button" class="btn btn-success" ng-click="clear()" data-dismiss="modal">
+											<span class="glyphicon glyphicon-refresh"></span> 
+											清空</button>
+										<button type="button" class="btn btn-danger" data-dismiss="modal">
+											<span class="glyphicon glyphicon-remove"></span> 
+											关闭</button>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>
+									序号
+								</th>
+								<th>
+									编号
+								</th>
+								<th>
+									书名
+								</th>
+								<th>
+									图片
+								</th>
+								<th>
+									价格
+								</th>
+								<th>
+									作者
+								</th>
+								<th>
+									操作
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="b in books" ng-class="{'info':$odd}">
+								<td>
+									{{$index+1}}
+								</td>
+								<td>
+									{{b.id}}
+								</td>
+								<td>
+									{{b.title}}
+								</td>
+								<td>
+									<img ng-src="img/{{b.picture}}" class="cover" />
+								</td>
+								<td>
+									{{b.price | number:1}}
+								</td>
+								<td>
+									{{b.author}}
+								</td>
+								<td>
+									<button type="button" class="btn btn-danger btn-xs" ng-click="del(b.id,$index)">删除</button>
+									<button href="#modal-container-234446" role="button" class="btn btn-xs btn-primary" data-toggle="modal" ng-click="edit(b)">编辑</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!--引入angularjs框架-->
+		<script src="js/angular146/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jQuery1.11.3/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//定义模块，指定依赖项为空
+			var bookApp = angular.module("bookApp", []);
+
+			//定义控制器，指定控制器的名称，$scope是全局对象
+			bookApp.controller("BookController", ['$scope', '$http', function($scope, $http) {
+				$scope.books = [];
+				$scope.save = function() {
+					$http({
+							url: "http://127.0.0.1:3000/books/book",
+							data: $scope.book,
+							method: $scope.book.id ? "PUT" : "POST"
+						})
+						.success(function(data, status, headers, config) {
+							if($scope.book.id) {
+								alert("修改成功");
+							} else {
+								$scope.books.push(data);
+							}
+						})
+						.error(function(data, status, headers, config) {
+							alert(status);
+						});
+				}
+
+				$scope.edit = function(b) {
+					$scope.book = b;
+				}
+				$scope.clear = function() {
+					$scope.book = {};
+				}
+
+				//初始化加载
+				$http.get("http://127.0.0.1:3000/")
+					.success(function(data, status, headers, config) {
+						$scope.books = data;
+					})
+					.error(function(data, status, headers, config) {
+						alert(status);
+					});
+
+				$scope.del = function(id, index) {
+					$http.delete("http://127.0.0.1:3000/books/id/" + id)
+						.success(function(data, status, headers, config) {
+							$scope.books.splice(index, 1);
+						})
+						.error(function(data, status, headers, config) {
+							alert(status);
+						});
+				}
+			}]);
+		</script>
+	</body>
+
+</html>
